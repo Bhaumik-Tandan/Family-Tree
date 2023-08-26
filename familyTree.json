@@ -1,1 +1,1 @@
-{"person": [], "relationships": [{}], "relationship": []}
+{"person": ["Amit Dhakad", "KK Dhakad"], "relationships": [{"relatedTo": "Amit Dhakad", "relationship": "son", "relative": "KK Dhakad"}], "relationship": ["son"]}

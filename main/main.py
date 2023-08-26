@@ -1,5 +1,6 @@
 from entity import Entity
 import sys
+from familyTree import FamilyTree
 def main():
     arguments = sys.argv[1:]
 
@@ -10,6 +11,9 @@ def main():
     if arguments[0] == "add":
         Entity(arguments[1:])
 
+    elif arguments[0] == "connect":
+        FamilyTree.connectPeople(arguments[1:])
+        
     
 
 
