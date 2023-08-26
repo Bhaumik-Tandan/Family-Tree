@@ -6,18 +6,15 @@ class JSONFileHandler:
     def __new__(cls, filename):
         if JSONFileHandler._instance is None:
             JSONFileHandler._instance = super().__new__(cls)
-        JSONFileHandler._instance.filename = filename
+            JSONFileHandler._instance.filename = filename
         return JSONFileHandler._instance
 
-    def __init__(self, filename):
-        self.filename = filename
 
     def read(self):
-        with open(self.filename) as file:
+        with open(self.filename, "r") as file:
             data = json.load(file)
         return data
 
     def write(self, data):
-        with open(self.filename) as file:
+        with open(self.filename, "w") as file:
             json.dump(data, file)
-
