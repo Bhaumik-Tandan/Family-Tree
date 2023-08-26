@@ -1,11 +1,13 @@
-from entity import Entity
 import sys
+sys.path.append('main')
+from entity import Entity
+
 from familyTree import FamilyTree
 def main():
     arguments = sys.argv[1:]
 
     if not arguments:
-        print("Invalid command")
+        raise Exception("No command provided")
         return
 
     if arguments[0] == "add":
