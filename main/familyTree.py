@@ -5,6 +5,7 @@ class FamilyTree:
     def __init__(self):
         raise Exception("Cannot instantiate this class")
 
+    @staticmethod
     def connectPeople(arguments):
         # Example input: ["Amit", "Dhakad", "as", "son", "of", "KK", "Dhakad"]
 
@@ -39,6 +40,29 @@ class FamilyTree:
 
         file.write(data)
 
+    
+    @staticmethod
+    def countPeople(arguments):
+        #  ["son" ,"of","<name>"]
+
+        relation = arguments[0]
+        relatedTo = " ".join(arguments[2:])
+
+        data=file.read()
+
+        if relation not in data["relationship"]:
+            raise Exception("Invalid relationship")
+
+        if relatedTo not in data["person"]:
+            raise Exception("Invalid person")
+
+        count = 0
+
+        for relationship in data["relationships"]:
+            if relationship["relationship"] == relation and relationship["relatedTo"] == relatedTo:
+                count += 1
+
+        print(count)
 
 
 

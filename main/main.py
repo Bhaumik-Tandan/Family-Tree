@@ -13,6 +13,12 @@ def main():
 
     elif arguments[0] == "connect":
         FamilyTree.connectPeople(arguments[1:])
+
+    elif arguments[0] == "count":
+        FamilyTree.countPeople(arguments[1:])
+
+    else:
+        raise Exception("Invalid command")
         
     
 
